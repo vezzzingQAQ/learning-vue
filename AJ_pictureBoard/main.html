@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <button id="btleft" v-show="index!=0" @click="prev"><i class="fa fa-angle-left"></i></button>
+        <img :src="imgArray[index]">
+        <button id="btright" v-show="index<imgArray.length-1" @click="next"><i class="fa fa-angle-right"></i></button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                imgArray:[
+                    "img/artist1.png",
+                    "img/artist2.png",
+                    "img/artist3.png",
+                    "img/artist4.png",
+                ],
+                index:0,
+            },
+            methods:{
+                prev:function(){
+                    this.index--;
+                },
+                next:function(){
+                    this.index++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

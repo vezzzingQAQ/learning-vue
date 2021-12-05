@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        window.onload=function(){
+            var todo=document.querySelectorAll(".todo");
+            const colorList=[
+                "#FCD5CE",
+                "#FAE1DD",
+                "#F8EDEB",
+                "#E8E8E4",
+                "#D8E2DC",
+                "#ECE4DB",
+                "#FFE5D9",
+                "#FFD7BA",
+                "#FEC89A"
+            ]
+            //颜色依次循环拾取
+            for(var i=0;i<todo.length;i++){
+                var currentColorIndex=i%colorList.length;
+                todo[i].style.backgroundColor=colorList[currentColorIndex];
+            }
+        }
+    </script>
+</head>
+<body>
+    <section class="todoapp">
+        <header class="header">
+            <h1>vezzzing养成计划</h1>
+        </header>
+        <section class="main">
+            <input autofocus="autofocus" autocomplete="off" 
+            placeholder="给vezzzing下达任务" class="newProject" 
+            v-model="inputValue" @keydown.enter="addList" @keyup.enter="addStyle">
+            <ul class="todoList">
+                <li class="todo" v-for="(item,index) in list">
+                    <div class="view">
+                        <span class="index">{{index+1}}.</span>
+                        <label>{{item}}</label>
+                        <button class="destoroy" @click="remove(index)">X</button>
+                    </div>
+                </li>
+            </ul>
+            <div class="footer" v-show="list.length!=0">
+                <p>{{list.length}} items left</p>
+                <input type="button" @click="clear" value="Clear">
+            </div>
+        </section>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:".todoapp",
+            data:{
+                list:["起床","恰饭","睡觉觉"],
+                inputValue:"",
+            },
+            methods:{
+                addList:function(){
+                    this.list.push(this.inputValue);
+                },
+                addStyle:function(){
+                    var todo=document.querySelectorAll(".todo");
+                    const colorList=[
+                        "#FCD5CE",
+                        "#FAE1DD",
+                        "#F8EDEB",
+                        "#E8E8E4",
+                        "#D8E2DC",
+                        "#ECE4DB",
+                        "#FFE5D9",
+                        "#FFD7BA",
+                        "#FEC89A"
+                    ]
+                    //颜色依次循环拾取
+                    for(var i=0;i<todo.length;i++){
+                        var currentColorIndex=i%colorList.length;
+                        todo[i].style.backgroundColor=colorList[currentColorIndex];
+                    }
+                },
+                remove:function(index){
+                    //数据改变和数据绑定的元素同步改变
+                    this.list.splice(index,1);
+                },
+                clear:function(){
+                    this.list=[];
+                }
+            }
+        })
+    </script>
+</body>
+</html>

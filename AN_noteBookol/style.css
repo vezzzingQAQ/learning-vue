@@ -1,0 +1,114 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: white;
+}
+.todoapp{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.header h1{
+    color: lightcoral;
+    margin-bottom: 30px;
+    margin-top: 60px;
+    font-size: 40px;
+    letter-spacing: 3px;
+}
+.main{
+    background-color: #FEC5BB;
+}
+.main input{
+    border: none;
+    outline: none;
+    border-radius: 0;
+    background-color: #ffffff;
+    border: 20px solid #FEC5BB;
+    padding: 3px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    line-height: 80px;
+    height: 80px;
+    font-size: 20p
+}
+.main ul{
+    margin: 0;
+    padding: 20px;
+}
+.main .todoList li{
+    list-style: none;
+}
+.main .todoList .todo .view{
+    height: 50px;
+}
+
+.main .view{
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    padding-left: 20px;
+    position: relative;
+    overflow: hidden;
+}
+.main .view span{
+    color: rgb(34, 34, 34);
+    height: 50px;
+    line-height: 50px;
+}
+.main .view:hover{
+    background-color: rgba(255, 255, 255, 0.39);
+}
+.main .view label{
+    color: rgb(78, 14, 12);
+}
+.main .view button{
+    position: absolute;
+    right: 0;
+    height: 50px;
+    line-height: 50px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: rgba(0, 0, 0, 0);
+    width: 30px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+}
+.main .view button:hover{
+    color: black;
+}
+
+.main .footer{
+    position: relative;
+    background-color: #FEC5BB;
+    height: 60px;
+}
+.main .footer p{
+    position: absolute;
+    left: 22px;
+    line-height: 40px;
+    height: 40px;
+    font-size: 14px;
+    color: rgb(170, 77, 73);
+}
+.main .footer input{
+    position: absolute;
+    right: 20px;
+    width: 80px;    
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #fae1dd00;
+    line-height: 40px;
+    font-size: 18px;
+    color: rgb(170, 77, 73);
+    background-color: #ffffff6e;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.main .footer input:hover{
+    background-color: #ffffffcc;
+}

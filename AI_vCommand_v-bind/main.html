@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../main.css">
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            background-color: grey;
+        }
+        img{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            transition: 0.5s ease-in-out;
+        }
+        .active{
+            border: 5px solid lightpink;
+            box-sizing: border-box;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <!--<img v-bind:src="imgSrc" alt="" :title="imgTitle+'!!'" :class="isActive?'active':''" @click="toggleActive">三元表达式-->
+        <img v-bind:src="imgSrc" alt="" :title="imgTitle+'!!'" :class="{active:isActive}" @click="toggleActive"><!--三元表达式-->
+
+        <!--简写：<img :src="imgSrc" alt="">-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                imgSrc:"navlogo.png",
+                imgTitle:"vezzzingQAQyyds",
+                isActive:false,
+            },
+            methods:{
+                toggleActive:function(){
+                    this.isActive=!this.isActive;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

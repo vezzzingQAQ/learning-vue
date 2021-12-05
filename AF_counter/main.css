@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #fff;
+}
+#app{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.input-num{
+    height: 100px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.input-num button{
+    background-color: rgb(0, 168, 190);
+    color: #fff;
+    outline: none;
+    border: none;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-size: 40px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+.input-num button:hover{
+    background-color: rgb(243, 113, 255);
+}
+.input-num button:active{
+    transition: 0.1s ease-in-out;
+    background-color: red;
+}
+.input-num button .shade{
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 23px;
+    height: 200px;
+    transform-origin: center;
+    transform: rotate(-45deg);
+    background-color: rgba(255, 255, 255, 0.678);
+    transition: 0.48s;
+}
+.input-num button:hover .shade{
+    transform: translate(140px,-140px) rotate(-45deg);
+}
+.input-num #b1{
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+.input-num #b2{
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.input-num span{
+    display: inline-block;
+    text-align: center;
+    width: 160px;
+    height: 100px;
+    font-size: 30px;
+    line-height: 100px;
+}    
